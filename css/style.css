@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Cores */
+    --cor-primaria: #1a1a1a;
+    --cor-secundaria: #00a000;
+    /* Verde mais claro da imagem */
+    --cor-verde-escura: #066706;
+    --cor-branca: #f5f5f5;
+    --cor-cinza: #b0b0b0;
+    --cor-cinza-escuro: #252525;
+    --cor-preto: #000000;
+
+    /* Fontes */
+    --fonte-principal: 'Roboto', sans-serif;
+    --tamanho-fonte-base: 1rem;
+    --tamanho-fonte-h1: 1.5rem;
+    --tamanho-fonte-h2: 1.25rem;
+
+    /* Medidas */
+    --largura-container-mobile: 90%;
+    --largura-container-tablet: 80%;
+    --largura-container-desktop: 1200px;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+body {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    height: 4rem;
+    background-color: var(--cor-primaria);
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--cor-branca);
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn.verde {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    transition: background-color 0.3s;
+}
+
+.btn.verde:hover {
+    background-color: var(--cor-verde-escura);
+}
+
+@media (max-width: 768px) {
+    header nav a {
+        display: none;
+    }
+}
+
+/* Parte 1 */
+.parte1 {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-branca);
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.parte1 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.7);
+}
+
+.parte1 h1,
+.parte1 p,
+.parte1 .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.parte1 h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.parte1 p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.parte1 .btn {
+    margin-top: 2rem;
+}
+
+@media (min-width: 769px) {
+    .parte1 h1 {
+        font-size: 5rem;
+    }
+
+    .parte1 p {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Parte 2 */
+.parte2 {
+    background-color: var(--cor-preto);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.parte2 .content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.parte2 h2:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.parte2 .caracteristicas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.parte2 p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.parte2 .botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.parte2 .botoes button {
+    background-color: transparent;
+    color: var(--cor-branca);
+    border: 1px solid var(--cor-branca);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.parte2 .botoes button:hover {
+    background-color: var(--cor-branca);
+    color: var(--cor-primaria);
+}
+
+.icone-play {
+    font-size: 1rem;
+}
+
+@media (min-width: 769px) {
+    .parte2 .botoes {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .parte2 .botoes button {
+        margin: 0 0.5rem;
+    }
+}
+
+
+/* Seção do Vídeo do Drone */
+.video {
+    position: relative;
+    text-align: center;
+}
+
+.video video {
+    width: 100%;
+    display: block;
+}
+
+/* Parte 3 */
+.parte3 {
+    background-color: var(--cor-primaria);
+    padding: 3rem 1.5rem;
+    max-width: var(--largura-container-desktop);
+    margin: 0 auto;
+}
+
+.linha {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--cor-cinza-escuro);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+}
+
+.card h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .linha {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .card {
+        flex: 1 1 30%;
+        max-width: 350px;
+    }
+}
+
+/* Parte 4 */
+.parte4 {
+    background-image: url('../img/Imagem\ 3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 4rem 1.5rem;
+    color: var(--cor-branca);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.parte4 .coluna {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.parte4 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.parte4 p:first-of-type {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.parte4 p {
+    font-size: 0.9rem;
+}
+
+.parte4 img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-branca);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.parte4 .coluna2 {
+    text-align: center;
+}
+
+.parte4 .coluna2 p {
+    margin: 0;
+    font-style: normal;
+}
+
+.parte4 .coluna2 h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .parte4 {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2rem;
+        padding: 6rem 2rem;
+    }
+
+    .parte4 .coluna {
+        text-align: left;
+    }
+
+    .parte4 .coluna2 {
+        text-align: right;
+    }
+}
+
+
+/* Parte 5 */
+.parte5 {
+    background-color: var(--cor-preto);
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.parte5 .contato {
+    text-align: center;
+    max-width: 500px;
+}
+
+.parte5 .contato h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.parte5 .contato h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.parte5 .contato p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-cinza);
+}
+
+.parte5 .formulario-contato {
+    background-color: var(--cor-branca);
+    color: var(--cor-primaria);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.parte5 .formulario-contato label {
+    font-weight: bold;
+    color: #555;
+}
+
+.parte5 .formulario-contato input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.parte5 .formulario-contato button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.parte5 .formulario-contato button:hover {
+    background-color: var(--cor-verde-escura);
+}
+
+@media (min-width: 1024px) {
+    .parte5 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 6rem 5rem;
+    }
+
+    .parte5 .contato {
+        text-align: left;
+    }
+}
