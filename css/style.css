@@ -448,3 +448,31 @@ header nav a:hover {
         text-align: left;
     }
 }
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-preto);
+    color: var(--cor-cinza);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.container-rodape {
+    max-width: var(--largura-container-desktop);
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--cor-cinza);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--cor-branca);
+}
